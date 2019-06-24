@@ -13,7 +13,7 @@ let config = JSON.parse(cString);
 
 let log = new Logger({saveToFile: config.saveEventsToFile});
 
-let debugMode = config.debug || false;
+let debugMode: boolean = config.debug || false;
 
 let serverDatabase = new NeDB({
     filename: './datastore/users.store',
@@ -23,5 +23,16 @@ let serverDatabase = new NeDB({
 const bot = new Client(config.token);
 
 process.on('SIGINT', function() {
-
+    log.info('process', 'CTRL+C was Executed...');
+    process.exit(0)
 })
+
+log.info('bot', 'Starting Discord Bot...');
+
+bot.on('ready', function() {
+    log.success('bot', 'Bot Successfully Started!');
+    Object.keys(config).forEach((key: string) => {
+        log.info('bot', `${key.toUpperCase()} => ${config[key]}`);
+    })
+})
+
