@@ -1,0 +1,6 @@
+{
+    "id": "YOUR_DISCORD_BOT_CLIENT_ID",
+    "token": "YOUR_DISCORD_BOT_TOKEN",
+    "prefix": "!",
+    "debug": true,
+}
