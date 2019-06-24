@@ -3,6 +3,8 @@ import fs from 'fs';
 
 interface Colors { [key: string]: any }
 
+interface Options { saveToFile: boolean }
+
 class LoggerError extends Error {
     constructor(message: string) {
         super(message);
@@ -14,8 +16,8 @@ class Logger {
     saveToFile: boolean;
     file: any; // Not worried about that this moment...
     colors: Colors;
-    constructor(saveToFile: boolean) {
-        this.saveToFile = (!saveToFile) ? false : saveToFile;
+    constructor(options: Options) {
+        this.saveToFile = (!options.saveToFile) ? false : options.saveToFile;
         this.colors = {
             'error': chalk.red,
             'warning': chalk.yellow,
