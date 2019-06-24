@@ -39,6 +39,9 @@ bot.on('ready', function() {
 bot.on('messageCreate', (message: Message) => {
     if(message.content.startsWith(config.prefix)) {
         let cmdArgs: string[] = message.content.replace(config.prefix, '').split(' ');
-        
+
+        if(cmdArgs[0] == 'register') {
+            
+        }
     }
 })

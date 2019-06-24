@@ -4,12 +4,14 @@ export interface User {
     discrim: string,
     avatarURL: string,
     summary: string;
-    discord: Discord;
-    accounts: Social[],
+    doesCharge: boolean;
+    available: boolean;
+    workTypes: string[];
+    discord: Discord | null;
+    accounts: Social[];
 }
 
 export interface Discord {
-    id: string;
     name: string,
     link: string,
 }
