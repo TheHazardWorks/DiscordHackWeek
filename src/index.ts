@@ -11,7 +11,7 @@ import Logger from './lib/Logger';
 let cString = fs.readFileSync('../configuration.json', {encoding: 'utf8'});
 let config = JSON.parse(cString);
 
-let log = new Logger(true);
+let log = new Logger({saveToFile: config.saveEventsToFile});
 
 let debugMode = config.debug || false;
 
