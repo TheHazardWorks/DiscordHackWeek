@@ -1,4 +1,4 @@
-import {Client} from 'eris';
+import {Client, Message} from 'eris';
 import chalk from 'chalk';
 import figlet from 'figlet';
 import moment from 'moment';
@@ -36,3 +36,9 @@ bot.on('ready', function() {
     })
 })
 
+bot.on('messageCreate', (message: Message) => {
+    if(message.content.startsWith(config.prefix)) {
+        let cmdArgs: string[] = message.content.replace(config.prefix, '').split(' ');
+        
+    }
+})
