@@ -19,3 +19,6 @@ let serverDatabase = new NeDB({
 
 const bot = new Client(config.token);
 
+process.on('SIGINT', function() {
+    
+})
